@@ -1,79 +1,137 @@
 /* Estilos generales del nav */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #000;
+}
+
 nav {
   background-color: #000; /* negro de fondo */
   padding: 10px 0;
 }
 
 nav ul {
-  list-style: none;       /* quita viñetas */
+  list-style: none; /* quita viñetas */
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* centra los enlaces */
-  gap: 20px;              /* espacio entre enlaces */
+  justify-content: center;
+  gap: 20px;
 }
 
 nav ul li a {
-  text-decoration: none;   /* sin subrayado */
-  color: #fff;             /* texto blanco */
-  font-family: 'Roboto', sans-serif;
+  text-decoration: none; /* sin subrayado */
+  color: #fff; /* texto blanco */
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   padding: 8px 12px;
   transition: all 0.3s ease;
   border-radius: 4px;
 }
 
-/* Efecto al pasar el mouse */
 nav ul li a:hover {
   background-color: #311851; /* violeta profundo */
   color: #fff;
 }
 
-/* Enlace activo */
 nav ul li a.activo {
-  pointer-events: none;     /* desactiva el clic */
+  pointer-events: none; /* desactiva el clic */
   background-color: #7b1f3d; /* bordó */
   color: #fff;
   font-weight: bold;
 }
+main {
+  min-height: 150vh;
+}
+
 footer {
-    background-color: #000;   /* mismo fondo que el nav */
-    color: #fff;              /* texto blanco */
-    text-align: center;
-    padding: 20px 0;
-    font-family: 'Roboto', sans-serif;
+  background-color: #000; /* mismo fondo que el nav */
+  color: #fff; /* texto blanco */
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Roboto", sans-serif;
+  margin-right: 20px;
+
+  display: flex; /* ← faltaba el ; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 footer p {
-    margin: 10px 0;
-    font-size: 14px;
+  margin-left: 40px;
+  font-size: 14px;
 }
 
 footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 footer ul li a {
-    text-decoration: none;
-    color: #fff;              /* enlaces blancos como en el nav */
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  padding: 6px 10px;
 }
 
 footer ul li a:hover {
-    color: #c77dff;           /* violeta clarito al pasar el mouse */
-    background-color: transparent; /* sin fondo */
+  color: #c77dff;
+  background-color: transparent;
 }
 
 footer p:last-of-type {
-    font-size: 12px;
-    color: #aaa;              /* gris suave para el copyright */
+  font-size: 12px;
+  color: #aaa;
+}
+
+.icono {
+  width: 20px;
+  height: 20px;
+}
+.copy {
+  position: relative;
+  left: 200px;
+}
+/* Wh fijo */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  z-index: 1000;
+}
+.whatsapp-float img {
+  width: 55px;
+  height: 55px;
+  animation: latido 1.5s infinite;
+  filter: drop-shadow(0 0 5px #25d366);
+} /* EFECTO LATIDO */
+@keyframes latido {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
